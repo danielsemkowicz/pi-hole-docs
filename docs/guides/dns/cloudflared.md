@@ -84,13 +84,6 @@ Edit configuration file by copying the following in to `/etc/default/cloudflared
 CLOUDFLARED_OPTS=--port 5053 --upstream https://1.1.1.1/dns-query --upstream https://1.0.0.1/dns-query
 ```
 
-Update the permissions for the configuration file and `cloudflared` binary to allow access for the cloudflared user:
-
-```bash
-sudo chown cloudflared:cloudflared /etc/default/cloudflared
-sudo chown cloudflared:cloudflared /usr/local/bin/cloudflared
-```
-
 Then create the `systemd` script by copying the following into `/etc/systemd/system/cloudflared.service`. This will control the running of the service and allow it to run on startup:
 
 ```bash
